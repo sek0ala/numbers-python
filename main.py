@@ -2,7 +2,7 @@ import math
 from ExternalLibs import primality_test
 
 def op_options():
-    print('1. pi to the nth\n2. e to the nth\n3. Fibonacci sequence\n4. Prime factors\n5. Next Prime')
+    print('1. pi to the nth\n2. e to the nth\n3. Fibonacci sequence\n4. Prime factors\n5. Next Prime\n6. Floor Cost')
 
 #A function to stop running the program
 def stop_function():
@@ -66,13 +66,21 @@ def next_prime(n):
         if not(stop):
             prime = False
 
+def floor_cost(cost):
+    width = float(input('What is the width of the floor?\n'))
+    height = float(input('What is the height of the floor?\n'))
+    area = width * height
+    total = area * cost
+    print(f'The tiles will cost ${total}0')
+
 def main():
     # Defining a dictionary to choose an operation from
     print('Choose an operation from below:')
     op_options()
     choice = input('')
     n = int(input('Enter the accuracy you would like:\n')) #Fix this. Your project is way beyond accuracy now.
-    operations = {'1': pi_nth, '2': e_nth, '3': fib_nth, '4': prime_factors, '5': next_prime}
+    operations = {'1': pi_nth, '2': e_nth, '3': fib_nth, '4': prime_factors, '5': next_prime,
+                  '6': floor_cost}
     result = operations.get(choice)
     result(n)
 
