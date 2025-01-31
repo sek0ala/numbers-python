@@ -73,6 +73,12 @@ def floor_cost(cost):
     total = area * cost
     print(f'The tiles will cost ${total}0')
 
+def mortgage_calculator(n):
+    pass
+
+def alarm_clock():
+    pass
+
 def main():
     # Defining a dictionary to choose an operation from
     print('Choose an operation from below:')
